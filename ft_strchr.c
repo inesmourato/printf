@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 16:52:42 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/07 14:21:39 by ibravo-m         ###   ########.fr       */
+/*   Created: 2024/04/19 17:09:34 by ibravo-m          #+#    #+#             */
+/*   Updated: 2024/05/07 11:04:35 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-# include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
+char	*ft_strchr(const char *str, int c)
+{
+	int	i;
 
-int	ft_putchar_fd(char c, int fd);
-char	*ft_strchr(const char *str, int c);
-char	ft_putstr_fd(char *s, int fd);
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (!((char)c))
+		return ((char *)&str[i]);
+	return (NULL);
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/06 17:59:26 by inesmourato      ###   ########.fr       */
+/*   Updated: 2024/05/07 14:40:52 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int ft_arguments(const char *s, int i, va_list args)
 {
     if(s[i + 1] == 'c')
         return(ft_putchar_fd(va_arg(args, int), 1));
-    /*else if(s[i + 1] == 's')
+    else if(s[i + 1] == 's')
         return(ft_putstr_fd(va_arg(args, char *), 1));
-    else if(s[i + 1] == 'p')*/
+//     else if(s[i + 1] == 'p')*/
         
 }
 
@@ -36,11 +36,11 @@ int ft_printf(const char *str, ...)
     {
         if(str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
            {
-                ret = ret + ft_arguments(string, i, args);
+                ret = ret + ft_arguments(str, i, args);
                 i++;
            }
         else
-            ret = ret + ft_putchar(str[i]);
+            ret = ret + ft_putchar_fd(str[i], 1);
         i++;
     }
     va_end(args);
@@ -49,5 +49,5 @@ int ft_printf(const char *str, ...)
 
 int main()
 {
-    ft_printf("ola, tudo %c", 'd');
+    ft_printf("Prints a single character: %c", 'a');
 }

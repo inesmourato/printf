@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 16:52:42 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/07 14:21:39 by ibravo-m         ###   ########.fr       */
+/*   Created: 2024/04/25 12:12:10 by inesmourato       #+#    #+#             */
+/*   Updated: 2024/05/07 14:22:42 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-# include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
+char	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
 
-int	ft_putchar_fd(char c, int fd);
-char	*ft_strchr(const char *str, int c);
-char	ft_putstr_fd(char *s, int fd);
-
-#endif
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+        return(i);
+}
