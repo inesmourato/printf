@@ -6,7 +6,7 @@
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/07 14:40:52 by ibravo-m         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:54:24 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int ft_arguments(const char *s, int i, va_list args)
         return(ft_putchar_fd(va_arg(args, int), 1));
     else if(s[i + 1] == 's')
         return(ft_putstr_fd(va_arg(args, char *), 1));
-//     else if(s[i + 1] == 'p')*/
-        
+// //     else if(s[i + 1] == 'p')*/ 
+        else
+                return(0);
 }
 
 
@@ -49,5 +50,6 @@ int ft_printf(const char *str, ...)
 
 int main()
 {
-    ft_printf("Prints a single character: %c", 'a');
+    ft_printf("Prints a single character: %c\n", 'a');
+    ft_printf("Prints a string: %s\n", "ola");
 }
