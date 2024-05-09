@@ -6,7 +6,7 @@
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:52:42 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/07 14:21:39 by ibravo-m         ###   ########.fr       */
+/*   Updated: 2024/05/09 09:58:53 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 
 int	ft_putchar_fd(char c, int fd);
