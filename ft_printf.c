@@ -6,7 +6,7 @@
 /*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/13 17:09:30 by inesmourato      ###   ########.fr       */
+/*   Updated: 2024/05/13 17:53:30 by inesmourato      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@ int	ft_arguments(char s, va_list ap)
 	if (s == 'c')
 		count += (ft_putchar_fd(va_arg(ap, int), 1));
 	else if (s == 's')
-		count += (ft_putstr_fd(va_arg(ap, char *), 1));
+		count += (ft_putstr(va_arg(ap, char *)));
 	else if (s == 'i' || s == 'd')
 		count += (ft_printnum(va_arg(ap, int), 10, "0123456789"));
     else if(s == 'u')
         count += (ft_printnum(va_arg(ap, unsigned int), 10, "0123456789"));
+    else if(s == 'x')
+        count += (ft_printnum(va_arg(ap, unsigned int), 16, "0123456789abcdef"));
+    else if(s == 'X')
+        count += (ft_printnum(va_arg(ap, unsigned int), 16, "0123456789ABCDEF"));
+    else if(s == '%')
+        count += (ft_putchar_fd('%', 1));
     return (count);
 }
 
@@ -52,11 +58,25 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_printf("Prints a single character: %c\n", 'a');
 	ft_printf("Prints a string: %s\n", "ola");
     ft_printf("Prints a decimal: %d\n", 21);
-    ft_printf("Prints an integer base 10: %i\n", 321);
-    ft_printf("Prints an unsigned decimal (base 10) number: %i\n", 123243);
-}
+    ft_printf("Prints an integer base 10: %i\n", 2147483647);
+    ft_printf("Prints an unsigned decimal (base 10) number: %u\n", 4294967295);
+    ft_printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n", 7843);
+    ft_printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n", 7843);
+    ft_printf("Prints a percent sign: %%\n", 1);
+    //ft_printf("Prints all together: %c %s %d %i %u %x %X %%\n",'a', "ola", 21, 2147483647, 4294967295, 7843, 7843, 1);
+
+    printf("Prints a single character: %c\n", 'a');
+	printf("Prints a string: %s\n", "ola");
+    printf("Prints a decimal: %d\n", 21);
+    printf("Prints an integer base 10: %i\n", 2147483647);
+    printf("Prints an unsigned decimal (base 10) number: %u\n", 4294967295);
+    printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n", 7843);
+    printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n", 7843);
+    printf("Prints a percent sign: %%\n", 1);
+    //printf("Prints all together: %c %s %d %i %u %x %X %%\n",'a', "ola", 21, 2147483647, 4294967295, 7843, 7843, 1);
+}*/

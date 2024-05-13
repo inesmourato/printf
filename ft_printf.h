@@ -6,7 +6,7 @@
 /*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:52:42 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/13 17:10:51 by inesmourato      ###   ########.fr       */
+/*   Updated: 2024/05/13 17:53:05 by inesmourato      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 
 
 int	ft_putchar_fd(char c, int fd);
-char	ft_putstr_fd(char *s, int fd);
+char	ft_putstr(char *s);
 int ft_printnum(long num, int base, char *symbols);
+int	ft_printf(const char *str, ...);
 
 #endif
