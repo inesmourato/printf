@@ -4,6 +4,7 @@ SRC = ft_printf.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_strchr.c \
+	ft_printnum.c \
 
 OBJ = ${SRC:.c=.o}
 CFLAGS = -Wall -Wextra -Werror

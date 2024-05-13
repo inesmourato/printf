@@ -3,53 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/07 14:54:24 by ibravo-m         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:55:49 by inesmourato      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_arguments(const char *s, int i, va_list args)
+int	ft_arguments(char s, va_list ap)
 {
-    if(s[i + 1] == 'c')
-        return(ft_putchar_fd(va_arg(args, int), 1));
-    else if(s[i + 1] == 's')
-        return(ft_putstr_fd(va_arg(args, char *), 1));
-// //     else if(s[i + 1] == 'p')*/ 
-        else
-                return(0);
+    int count;
+    
+    count = 0;
+	if (s == 'c')
+		count += (ft_putchar_fd(va_arg(ap, int), 1));
+	else if (s == 's')
+		count += (ft_putstr_fd(va_arg(ap, char *), 1));
+	else if (s == 'i' || s == 'd')
+		count += (ft_printnum(va_arg(ap, int), 10, "0123456789"));
+    return (count);
 }
 
-
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-    va_list args;
-    int ret;
-    int i;
+	va_list	ap;
+	int		count;
+	int		i;
 
-    i = 0;
-    ret = 0;
-    va_start(args, str);
-    while(str[i])
-    {
-        if(str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
-           {
-                ret = ret + ft_arguments(str, i, args);
-                i++;
-           }
-        else
-            ret = ret + ft_putchar_fd(str[i], 1);
-        i++;
-    }
-    va_end(args);
-    return(ret);
+	i = 0;
+	count = 0;
+	va_start(ap, str);
+	while (str[i])
+	{
+		if (str[i] == '%')
+		{
+			count = count + ft_arguments(str[i + 1], ap);
+			i++;
+		}
+		else
+			count = count + ft_putchar_fd(str[i], 1);
+		i++;
+	}
+	va_end(ap);
+	return (count);
 }
 
-int main()
+int	main(void)
 {
-    ft_printf("Prints a single character: %c\n", 'a');
-    ft_printf("Prints a string: %s\n", "ola");
+	ft_printf("Prints a single character: %c\n", 'a');
+	ft_printf("Prints a string: %s\n", "ola");
+    ft_printf("Prints a decimal: %d\n", 21);
+    ft_printf("Prints an integer base 10: %i\n", 321);
 }
