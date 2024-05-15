@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/15 14:26:38 by ibravo-m         ###   ########.fr       */
+/*   Created: 2024/05/15 14:32:20 by ibravo-m          #+#    #+#             */
+/*   Updated: 2024/05/15 14:38:18 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,21 @@
 int	ft_arguments(char s, va_list ap)
 {
 	if (s == 'c')
-		return(ft_putchar(va_arg(ap, int)));
+		return (ft_putchar(va_arg(ap, int)));
 	else if (s == 's')
-		return(ft_putstr(va_arg(ap, char *)));
+		return (ft_putstr(va_arg(ap, char *)));
 	else if (s == 'p')
-		return(ft_pointer(va_arg(ap, unsigned long), "0123456789abcdef",
-				0));
+		return (ft_pointer(va_arg(ap, unsigned long), "0123456789abcdef", 0));
 	else if (s == 'i' || s == 'd')
-		return(ft_printnum(va_arg(ap, int), 10, "0123456789"));
+		return (ft_printnum(va_arg(ap, int), 10, "0123456789"));
 	else if (s == 'u')
-		return(ft_printnum(va_arg(ap, unsigned int), 10, "0123456789"));
+		return (ft_printnum(va_arg(ap, unsigned int), 10, "0123456789"));
 	else if (s == 'x')
-		return(ft_printnum(va_arg(ap, unsigned int), 16,
-					"0123456789abcdef"));
+		return (ft_printnum(va_arg(ap, unsigned int), 16, "0123456789abcdef"));
 	else if (s == 'X')
-		return(ft_printnum(va_arg(ap, unsigned int), 16,
-					"0123456789ABCDEF"));
+		return (ft_printnum(va_arg(ap, unsigned int), 16, "0123456789ABCDEF"));
 	else if (s == '%')
-		return(ft_putchar('%'));
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -62,44 +59,47 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int	main(void)
-{
-        int x = 4;
-        void *ptr = &x;
-        
-        ft_printf("%d \n", ft_printf("ola\n"));
-        ft_printf("%d \n", ft_printf(NULL));
-        int teste = printf("hello world\n");
-	printf("imprimiu: %d\n", teste);
-	int teste2 = ft_printf("hello world\n");
-	ft_printf("imprimiu: %d\n", teste2);
-        ft_printf("ola%%% \n");
-	ft_printf("Prints a single character: %c\n", 'a');
-	ft_printf("Prints a string: %s\n", "ola");
-	ft_printf("Prints a decimal: %d\n", 21);
-        ft_printf("Pointer argument in hexadecimal format: %p\n", ptr);
-	ft_printf("Prints an integer base 10: %i\n", 2147483647);
-	ft_printf("Prints an unsigned decimal (base 10) number: %u\n", 4294967295);
-	ft_printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n",
-		7843);
-	ft_printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n",
-		7843);
-	ft_printf("Prints a percent sign: %%\n", 1);
-	ft_printf("Prints all together: %c %s %d %i %u %x %X %%\n",'a', "ola",
-		21, 2147483647, 4294967295, 7843, 7843, 1);
-        ft_printf("\n");
-	printf("Prints a single character: %c\n", 'a');
-	printf("Prints a string: %s\n", "ola");
-	printf("Prints a decimal: %d\n", 21);
-        printf("Pointer argument in hexadecimal format: %p\n", ptr);
-	printf("Prints an integer base 10: %i\n", 2147483647);
-	printf("Prints an unsigned decimal (base 10) number: %u\n", UINT_MAX);
-	printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n",
-		7843);
-	printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n",
-		7843);
-	printf("Prints a percent sign: %%\n");
-	printf("Prints all together: %c %s %d %i %u %x %X %%\n",'a', "ola", 21,
-		2147483647, UINT_MAX, 7843, 7843);
-}
- 
+// int	main(void)
+// {
+// 	int		x;
+// 	void	*ptr;
+// 	int		teste;
+// 	int		teste2;
+
+// 	x = 4;
+// 	ptr = &x;
+// 	ft_printf("%d \n", ft_printf("ola\n"));
+// 	ft_printf("%d \n", ft_printf(NULL));
+// 	teste = printf("hello world\n");
+// 	printf("imprimiu: %d\n", teste);
+// 	teste2 = ft_printf("hello world\n");
+// 	ft_printf("imprimiu: %d\n", teste2);
+// 	ft_printf("ola%%% \n");
+// 	ft_printf("Prints a single character: %c\n", 'a');
+// 	ft_printf("Prints a string: %s\n", "ola");
+// 	ft_printf("Prints a decimal: %d\n", 21);
+// 	ft_printf("Pointer argument in hexadecimal format: %p\n", ptr);
+// 	ft_printf("Prints an integer base 10: %i\n", 2147483647);
+// 	ft_printf("Prints an unsigned decimal (base 10) number: %u\n", 4294967295);
+// 	ft_printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n",
+// 		7843);
+// 	ft_printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n",
+// 		7843);
+// 	ft_printf("Prints a percent sign: %%\n", 1);
+// 	ft_printf("Prints all together: %c %s %d %i %u %x %X %%\n", 'a', "ola", 21,
+// 		2147483647, 4294967295, 7843, 7843, 1);
+// 	ft_printf("\n");
+// 	printf("Prints a single character: %c\n", 'a');
+// 	printf("Prints a string: %s\n", "ola");
+// 	printf("Prints a decimal: %d\n", 21);
+// 	printf("Pointer argument in hexadecimal format: %p\n", ptr);
+// 	printf("Prints an integer base 10: %i\n", 2147483647);
+// 	printf("Prints an unsigned decimal (base 10) number: %u\n", UINT_MAX);
+// 	printf("Prints a number in hexadecimal (base 16) lowercase format: %x\n",
+// 		7843);
+// 	printf("Prints a number in hexadecimal (base 16) uppercase format: %X\n",
+// 		7843);
+// 	printf("Prints a percent sign: %%\n");
+// 	printf("Prints all together: %c %s %d %i %u %x %X %%\n", 'a', "ola", 21,
+// 		2147483647, UINT_MAX, 7843, 7843);
+// }

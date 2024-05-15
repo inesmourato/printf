@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:03:56 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/15 13:18:13 by ibravo-m         ###   ########.fr       */
+/*   Created: 2024/05/15 14:32:52 by ibravo-m          #+#    #+#             */
+/*   Updated: 2024/05/15 14:39:57 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-        return 1;
+	return (1);
 }
