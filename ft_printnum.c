@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 15:57:44 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/13 16:57:21 by inesmourato      ###   ########.fr       */
+/*   Created: 2024/05/15 10:45:39 by ibravo-m          #+#    #+#             */
+/*   Updated: 2024/05/15 10:45:47 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

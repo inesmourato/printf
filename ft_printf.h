@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:52:42 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/13 17:53:05 by inesmourato      ###   ########.fr       */
+/*   Updated: 2024/05/15 10:43:42 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 
 int	ft_putchar_fd(char c, int fd);
-char	ft_putstr(char *s);
+int	ft_putstr(char *s);
 int ft_printnum(long num, int base, char *symbols);
 int	ft_printf(const char *str, ...);
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inesmourato <inesmourato@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:12:10 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/13 17:54:33 by inesmourato      ###   ########.fr       */
+/*   Updated: 2024/05/15 10:43:26 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
