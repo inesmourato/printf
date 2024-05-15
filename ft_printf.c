@@ -6,7 +6,7 @@
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:51:25 by inesmourato       #+#    #+#             */
-/*   Updated: 2024/05/15 10:49:05 by ibravo-m         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:25:13 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ int	ft_arguments(char s, va_list ap)
 
 	count = 0;
 	if (s == 'c')
-		count += (ft_putchar_fd(va_arg(ap, int), 1));
+		count += (ft_putchar(va_arg(ap, int)));
 	else if (s == 's')
 		count += (ft_putstr(va_arg(ap, char *)));
+	else if (s == 'p')
+		count += (ft_pointer(va_arg(ap, unsigned long), "123456789abcdef",
+				0));
 	else if (s == 'i' || s == 'd')
 		count += (ft_printnum(va_arg(ap, int), 10, "0123456789"));
 	else if (s == 'u')
@@ -32,7 +35,7 @@ int	ft_arguments(char s, va_list ap)
 		count += (ft_printnum(va_arg(ap, unsigned int), 16,
 					"0123456789ABCDEF"));
 	else if (s == '%')
-		count += (ft_putchar_fd('%', 1));
+		count += (ft_putchar('%'));
 	return (count);
 }
 
@@ -45,8 +48,8 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	count = 0;
 	va_start(ap, str);
-        if(!str)
-                return(-1);
+	if (!str)
+		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -55,7 +58,7 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 		else
-			count = count + ft_putchar_fd(str[i], 1);
+			count = count + ft_putchar(str[i]);
 		i++;
 	}
 	va_end(ap);
@@ -93,8 +96,18 @@ int	ft_printf(const char *str, ...)
 
 /* int main()
 {
-        char *s2 = "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis, per gatis num morreus.";
-        ft_printf("%d",ft_printf(" %s %s %s %s %s", " - ", "", "4", "", s2));
-        printf("\n");
-        printf("%d", printf(" %s %s %s %s %s", " - ", "", "4", "", s2));
+		char *s2 = "Mussum Ipsum,
+			cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis,
+			per gatis num morreus.";
+		ft_printf("%d",ft_printf(" %s %s %s %s %s", " - ", "", "4", "", s2));
+		printf("\n");
+		printf("%d", printf(" %s %s %s %s %s", " - ", "", "4", "", s2));
 } */
+
+// int	main(void)
+// {
+// 	int x = 56;
+// 	void *ptr = &x;
+
+//         ft_printf("%p", ptr);
+// }

@@ -6,7 +6,7 @@
 /*   By: ibravo-m <ibravo-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 10:45:39 by ibravo-m          #+#    #+#             */
-/*   Updated: 2024/05/15 10:45:47 by ibravo-m         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:17:21 by ibravo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ft_printnum(long num, int base, char *symbols)
     }
     else if(num < base)
     {
-        return(ft_putchar_fd(symbols[num], 1));
+        return(ft_putchar(symbols[num]));
     }
     else
     {
